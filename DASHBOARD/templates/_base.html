@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<title>{% block title_content %} DASHBOARD {% endblock %}</title>
+		<!-- My Owner CSS File -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+		<!-- Google Fonts Roboto -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"/>
+		<!-- MDB -->
+		<link rel="stylesheet" href="{% static 'css/mdb.min.css' %}" />
+	</head>
+	<body>
+		<header>
+			{% include '_nav.html' %}
+			{% block header_content %}  {% endblock %}
+		</header>
+		<main>
+            {% block main_content %}  {% endblock %}
+		</main>
+		<a href="#navbar"><button class="go_up" title="Cliquer pour remonter la page" onclick="go_up();">^</button></a>
+        {% include '_footer.html' %}
+		<script type="text/javascript" src="{% static 'js/mdb.umd.min.js' %}"></script>
+		<script type="text/javascript">
+			function go_up() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Pour un défilement fluide
+                });
+            }
+
+            // Afficher ou masquer le bouton en fonction du défilement de la page
+            window.onscroll = function() {
+                scrollFunction();
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                    document.getElementsByClassName("go_up")[0].style.display = "block";
+                } else {
+                    document.getElementsByClassName("go_up")[0].style.display = "none";
+                }
+            }
+		</script>
+	</body>
+</html>

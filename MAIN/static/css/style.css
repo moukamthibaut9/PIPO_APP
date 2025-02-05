@@ -1,0 +1,358 @@
+.error_message
+{
+    text-align: center;
+    color: red;
+    font-weight: bolder;
+}
+.success_message
+{
+    text-align: center;
+    color: green;
+    font-weight: bolder;
+}
+.info_message
+{
+    text-align: center;
+    color: blue;
+    font-weight: bolder;
+}
+.warning_message
+{
+    text-align: center;
+    color: yellow;
+    font-weight: bolder;
+}
+/**********************************     INDEX     ***************************************/
+/* Animation de clignotement */
+@keyframes Clignotement {
+    0% {opacity: 1;}
+    50% {opacity: 0.25;}
+    100% {opacity: 1;}
+}
+
+/* Application de l'animation au bouton */
+.get_started {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    font-size: 2em;
+    border: 2px solid white;
+    border-radius: 5px;
+    animation: Clignotement 2s infinite;
+}
+.get_started:hover {
+    background-color: #007bff;
+}
+.our_aims
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 8%;
+    gap: 2%;
+}
+.our_aims>div
+{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 5px 5px gray;
+    align-items: center;
+}
+.our_aims>div:hover span
+{
+    color: #007bff;
+    transition: 2s;
+}
+.activity_presentation
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    text-align: justify;
+}
+.activity_presentation>div
+{
+    justify-content: center;
+    align-content: center;
+    height: 300px;
+    width: 45%;
+}
+.activity_presentation>div>img
+{
+    width: 90%;
+    height: 75%;
+    border-radius: 10px;
+}
+/**********************************     FORUM     ***************************************/
+
+
+/**********************************    SIGN(UP|IN) - RESGISTRATION    ***************************************/
+.sign
+{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    margin: 2.5%;
+    padding: 1% 0% 1% 0%;
+    width: 95%;
+    height: 500px;
+    background-color: #007bff;
+    border-radius: 2%;
+}
+.sign1
+{
+    justify-content: center;
+    align-content: center;
+    background-color: white;
+    width: 45%;
+    border-radius: 40% 0% 0% 40%;
+}
+.sign2 /*Voir les autres definitions consernant cette classe dans le footer*/
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #28a745;
+    width: 45%;
+    border-radius: 0% 40% 40% 0%;
+}
+/**********************************     DASHBOARD     ***************************************/
+/*
+    Personnalisation du style pour l'affichage des erreurs lors du remplissage 
+    des formulaires d'ajout, modification et suppression
+*/
+.errorlist 
+{
+    color: red;
+    list-style: none;
+    font-weight: bolder;
+    padding: 0px;
+    margin: 0px;
+}
+/********************************************     FOOTER     *************************************************/
+footer
+{
+    display: flex;
+    flex-direction: row;
+    background-color: grey;
+    margin-top: 100px;
+}
+.go_up
+{
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    color: white;
+    background-color: gainsboro;
+    font: 2em bolder;
+    border-radius: 75%;
+}
+.go_up:hover
+{
+    cursor: default;
+    color: blue;
+    background-color: grey;
+    transition: 1s;
+}
+footer>div{width: 100%;}
+.footer_contact
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+@keyframes Etirer_Barre
+{
+    0%{width: 5%;margin-left: 47.5%;}
+    25%{width: 10%;margin-left: 45%;}
+    50%{width: 20%;margin-left: 40%;background-color: white;}
+    75%{width: 40%;margin-left: 30%;background-color: white;}
+    100%{width: 80%;margin-left: 10%;}
+}
+.footer_contact>h3>div
+{
+    height: 5px;
+    background-color: black;
+    animation: Etirer_Barre 2s linear infinite;
+}
+.footer_contact>form
+{
+    padding: 2%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footer_contact>form>div>input
+{
+    padding: 2%;
+    width: 90%;
+    margin-bottom: 2%;
+    border-radius: 10px;
+}
+.footer_contact>form>div>input[value]
+{
+    width: 50%;
+    color: blue;
+    font-weight: bolder;
+}
+.footer_contact>form>div>input[value]:hover
+{
+    color: white;
+    transition: 1s;
+}
+.footer_contact>form>div>textarea
+{
+    padding: 2%;
+    width: 90%;
+    margin-bottom: 3%;
+    border-radius: 10px;
+}
+.footer_footer
+{
+    border-left: 5px solid blue;
+    padding: 0% 2% 0% 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footer_social_network
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2%;
+}
+.footer_social_network>div
+{
+    width: 5%;
+}
+.footer_social_network>div img:hover
+{
+    background-color: white;
+    border-radius: 20px;
+    transition: 1s;
+}
+.footer_footer>h1{
+    padding-bottom: 10%;
+    text-align: right;
+    font-style: italic;
+    font-weight: bolder;
+}
+.footer_footer>h1+p{
+    padding-bottom: 5%;
+    text-align: center;
+    font-style: italic;
+}
+.footer_footer>h1+p+p{
+    text-align: left;
+    font-style: italic;
+    font-weight: bold;
+}
+.footer_footer>h1+p+p>a
+{
+    text-decoration: none;
+    color:white;
+}
+.footer_footer>h1+p+p>a:hover
+{
+    color:blue;
+    transition: 1s;
+}
+.copyright
+{
+    text-align: center;
+    padding-top: 5%;
+}
+/********************************     GESTION DE LA RESPONSIVITE     *************************************/
+@media screen and (max-width:850px)
+{
+    .our_aims
+    {
+        grid-template-columns: 1fr;
+        margin-bottom: 18%;
+        gap: 1%;
+    }
+    .activity_presentation
+    {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+    .activity_presentation>div
+    {
+        width: 90%;
+    }
+    .activity_presentation>div>img
+    {
+        width: 100%;
+        height: 100%;
+    }
+    .sign
+    {
+        flex-direction: column;
+        align-items: center;
+        height: 650px;
+    }
+    .sign1
+    {
+        align-content: end;
+        width: 95%;
+        height: 28%;
+        border-radius: 50% 50% 0% 0%;
+    }
+    .sign2
+    {
+        width: 95%;
+        height: 72%;
+        border-radius: 0% 0% 25% 25%;
+    }
+    footer
+    {
+        flex-direction: column;
+    } 
+    .footer_footer
+    {
+        border-left: none;
+        border-top: 5px solid blue;
+    }
+    .footer_footer>h1 , .footer_footer>h1+p , .copyright
+    {
+        padding: 0%;
+    }
+    @media screen and (max-width:500px)
+    {
+        .our_aims
+        {
+            margin-bottom: 25%;
+        }
+        .sign1
+        {
+            height: 33%;
+        }
+        .sign2
+        {
+            height: 67%;
+        }
+        .primary_dashboard_section_btn_options
+        {
+            flex-direction: column;
+            align-items: center;
+        }
+        .primary_dashboard_section_btn_options>button
+        {
+            width: 90%;
+        }
+        .displaying_entities>div
+        {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

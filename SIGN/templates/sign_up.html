@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titre_page %} INSCRIPTION {% endblock %}
+
+{% block header_content %} 
+<div style="height: 100px;"></div>
+{% endblock %}
+
+{% block main_content %}
+    <div class="sign">
+        <div class="sign1">
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == "error" %}
+                        <h6 class="error_message">{{ message }}</h6>
+                    {% elif message.tags == "success" %}
+                        <h6 class="success_message">{{ message }}</h6>
+                    {% elif message.tags == "info" %}
+                        <h6 class="info_message">{{ message }}</h6>
+                    {% else %}
+                        <h6 class="warning_message">{{ message }}</h6>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            <h4 class="mb-3">Enregistrez-vous  gratuitement et acceder à plus de possibilités !</h4>
+            <h5 class="mb-3">Veillez à bien remplir les champs, puis validez.</h4>
+        </div>
+        <div class="sign2">
+            <form action="" method="post" style="width: 70%;">{% csrf_token %}
+                {{ registration_form }}
+                <button type="submit" 
+                style="color: blue;padding: 1%;margin: 15px 20% 15px 20%;border-radius: 10px;width: 60%;">
+                    Valider
+                </button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

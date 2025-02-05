@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titre_page %} CONNEXION {% endblock %}
+
+{% block header_content %} 
+<div style="height: 100px;"></div>
+{% endblock %}
+
+{% block main_content %}
+    <div class="sign">
+        <div class="sign1">
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == "error" %}
+                        <h6 class="error_message">{{ message }}</h6>
+                    {% elif message.tags == "success" %}
+                        <h6 class="success_message">{{ message }}</h6>
+                    {% elif message.tags == "info" %}
+                        <h6 class="info_message">{{ message }}</h6>
+                    {% else %}
+                        <h6 class="warning_message">{{ message }}</h6>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            <h4 class="mb-3">Connectez-vous à votre compte pour bénéficier de plus de fonctionnalités !</h4>
+            <h5 class="mb-3">Veillez à bien remplir les champs, puis validez.</h4>
+        </div>
+        <div class="sign2">
+            <form action="" method="post" style="width: 80%;">{% csrf_token %}
+                {{ connexion_form }}
+                <button type="submit" 
+                style="color: blue;padding: 1%;
+                margin: 15px 20% 15px 20%;border-radius: 10px;width: 60%;">
+                    Valider
+                </button>
+            </form>
+            <h5><a href="{% url 'sign_up' %}">Cliquez ici</a> pour créer un compte si vous n'en disposez pas encore.</h5>
+            <h5>Mot de passe oublié ? <a href="{% url 'password_reset' %}">Cliquez ici pour le reinitialiser.</a></h5>
+        </div>
+    </div>
+{% endblock %}
